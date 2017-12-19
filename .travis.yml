@@ -47,6 +47,7 @@ install:
 
 # command to run tests, e.g. python setup.py test
 script:
+  - echo testing git revision $(git rev-parse HEAD) ...  # tell commit hash
   - nosetests -sv --with-coverage --cover-package=smac
 after_success:
   - codecov
